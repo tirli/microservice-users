@@ -24,7 +24,7 @@ function SoapError(text) {
 }
 
 const idGenerator = (function* idGenerator() {
-  let { id } = (db.last() || { id: 0 });
+  const id = ((db.last() || { id: 0 })).id;
   while (1) {
     yield ++id;
   }
@@ -99,7 +99,7 @@ const service = {
       },
 
       getUsersListByRole: function(args) {
-        const { role } = args;
+        const role = __(args.role);
         const users = db.filter({ role });
         return {
           'tns:users': {
