@@ -67,8 +67,8 @@
 			<output message="tns:userOut"/>
 		</operation>
 		<operation name="getUsersListByRole">
-			<output message="tns:getListOut"/>
 			<input message="tns:getUsersListIn"/>
+			<output message="tns:getListOut"/>
 		</operation>
 	</portType>
 	<binding name="microservice.users.UserControllerBinding" type="tns:microservice.users.UserControllerPort">
