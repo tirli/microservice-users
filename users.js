@@ -106,9 +106,7 @@ const service = {
         const users = db.filter({ role });
         return {
           return: {
-            users: {
-              user: users
-            }
+            user: users
           }
         };
       }
