@@ -100,8 +100,12 @@ const service = {
       },
 
       getUsersListByRole: function(args) {
+        console.log(args);
         const role = __(args.role);
         const users = db.filter({ role });
+        console.log(users);
+        console.log('____');
+        console.log(db);
         return {
           'tns:users': {
             user: users
