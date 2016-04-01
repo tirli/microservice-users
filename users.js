@@ -106,7 +106,7 @@ const service = {
         const users = db.filter({ role });
         return {
           return: {
-            'tns:users': {
+            users: {
               user: users
             }
           }
