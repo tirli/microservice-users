@@ -93,7 +93,10 @@ const service = {
         if (!user) {
           throw new SoapError('no such user');
         }
-        const newUser = Object.assign({}, user, args.user, { id });
+        const updated = {};
+        Object.keys(args.user).forEach(function(key) { updated[key] = __(args.user) });
+        console.log(updated);
+        const newUser = Object.assign({}, user, updated, { id });
         db.remove({ id });
         db.push(newUser);
         return newUser;
@@ -105,7 +108,7 @@ const service = {
         const users = db.filter({ role });
         console.log(users);
         console.log('____');
-        console.log(db);
+        console.log(db.get());
         return {
           'tns:users': {
             user: users
