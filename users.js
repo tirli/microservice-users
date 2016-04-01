@@ -94,7 +94,7 @@ const service = {
           throw new SoapError('no such user');
         }
         const updated = {};
-        Object.keys(args.user).forEach(function(key) { updated[key] = __(args.user) });
+        Object.keys(args.user).forEach(function(key) { updated[key] = __(args.user[key]) });
         console.log(updated);
         const newUser = Object.assign({}, user, updated, { id });
         db.remove({ id });
