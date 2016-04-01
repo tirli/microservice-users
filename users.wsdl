@@ -44,7 +44,7 @@
 		<part name="user" type="tns:user"/>
 	</message>
 	<message name="getUserByIdOut">
-		<part name="user" type="tns:user"/>
+		<part name="return" type="tns:user"/>
 	</message>
 	<message name="deleteUserIn">
 		<part name="id" type="xsd:int"/>
