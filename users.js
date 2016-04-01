@@ -72,9 +72,7 @@ const service = {
         }
 
         return {
-          return: {
-            user
-          }
+          return: user
         };
       },
 
@@ -107,8 +105,10 @@ const service = {
         const role = __(args.role);
         const users = db.filter({ role });
         return {
-          'tns:users': {
-            user: users
+          return: {
+            'tns:users': {
+              user: users
+            }
           }
         };
       }
