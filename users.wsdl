@@ -43,9 +43,6 @@
 	<message name="userOut">
 		<part name="user" type="tns:user"/>
 	</message>
-	<message name="getUserByIdOut">
-		<part name="return" type="tns:user"/>
-	</message>
 	<message name="deleteUserIn">
 		<part name="id" type="xsd:int"/>
 	</message>
@@ -67,7 +64,7 @@
 		</operation>
 		<operation name="getUserById">
 			<input message="tns:getUserByIdIn"/>
-			<output message="tns:getUserByIdOut"/>
+			<output message="tns:userOut"/>
 		</operation>
 		<operation name="getUsersListByRole">
 			<input message="tns:getUsersListIn"/>

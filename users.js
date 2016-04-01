@@ -89,9 +89,7 @@ const service = {
       },
 
       changeUser: function(args) {
-        console.log(args);
         const id = +__(args.user.id);
-        console.log(id);
         const user = db.find({ id });
         if (!user) {
           throw new SoapError('no such user');
@@ -106,12 +104,8 @@ const service = {
       },
 
       getUsersListByRole: function(args) {
-        console.log(args);
         const role = __(args.role);
         const users = db.filter({ role });
-        console.log(users);
-        console.log('____');
-        console.log(db.get());
         return {
           'tns:users': {
             user: users
