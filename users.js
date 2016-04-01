@@ -9,7 +9,6 @@ function __(value) {
   return value.$value || value;
 }
 
-
 function SoapError(text) {
   return {
     Fault: {
@@ -72,7 +71,11 @@ const service = {
           throw new SoapError('no such user');
         }
 
-        return user;
+        return {
+          return: {
+            user
+          }
+        };
       },
 
       deleteUser: function(args) {
