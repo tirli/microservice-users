@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:3001/users" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="microservice.users.UserController" targetNamespace="http://localhost:3001/users">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="https://microservice-users.herokuapp.com/users" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="microservice.users.UserController" targetNamespace="https://microservice-users.herokuapp.com/users">
 	<wsdl:types>
-		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:3001/users">
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://microservice-users.herokuapp.com/users">
 			<xs:complexType name="user">
 				<xs:sequence>
 					<xs:element name="id" type="xs:byte"/>
@@ -77,58 +77,58 @@
 		<operation name="register">
 			<soap:operation soapAction="urn:register"/>
 			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
 			<output>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</output>
 		</operation>
 		<operation name="login">
 			<soap:operation soapAction="urn:login"/>
 			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
 			<output>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</output>
 		</operation>
 		<operation name="changeUser">
 			<soap:operation soapAction="urn:changeUser"/>
 			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
 			<output>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</output>
 		</operation>
 		<operation name="getUserById">
 			<soap:operation soapAction="urn:getUserById"/>
 			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
 			<output>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</output>
 		</operation>
 		<operation name="getUsersListByRole">
 			<soap:operation soapAction="urn:getUsersListByRole"/>
 			<output>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</output>
 			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
 		</operation>
 		<operation name="deleteUser">
 			<soap:operation soapAction="urn:deleteUser"/>
 			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
 		</operation>
 	</binding>
 	<service name="microservice.users.UserControllerService">
 		<port name="microservice.users.UserControllerPort" binding="tns:microservice.users.UserControllerBinding">
-			<soap:address location="http://localhost:3001/users"/>
+			<soap:address location="https://microservice-users.herokuapp.com/users"/>
 		</port>
 	</service>
 </definitions>

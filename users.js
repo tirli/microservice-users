@@ -117,6 +117,6 @@ server = http.createServer(function(request,response) {
   response.end(xml);
 });
 
-server.listen(3001);
+server.listen(process.env.PORT || 3001);
 soap.listen(server, '/users', service, xml);
 console.log('launched');
