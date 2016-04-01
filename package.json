@@ -2,7 +2,7 @@
   "name": "microservice",
   "version": "1.0.0",
   "description": "",
-  "main": "orders.js",
+  "main": "users.js",
   "dependencies": {
     "babel-cli": "^6.6.5",
     "babel-preset-es2015-node5": "^1.2.0",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "babel-node users",
+    "start": "./node_modules/.bin/babel-node users.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
