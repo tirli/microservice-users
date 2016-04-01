@@ -24,7 +24,8 @@ function SoapError(text) {
 }
 
 const idGenerator = (function* idGenerator() {
-  const id = ((db.last() || { id: 0 })).id;
+  'use strict';
+  let id = ((db.last() || { id: 0 })).id;
   while (1) {
     yield ++id;
   }
