@@ -37,8 +37,8 @@
 	<message name="getUserByIdIn">
 		<part name="id" type="xsd:int"/>
 	</message>
-	<message name="geListIn">
-		<part name="users" type="xsd:integer"/>
+	<message name="getListOut">
+		<part name="users" type="tns:userList"/>
 	</message>
 	<message name="userOut">
 		<part name="user" type="tns:user"/>
@@ -46,7 +46,9 @@
 	<message name="deleteUserIn">
 		<part name="id" type="xsd:int"/>
 	</message>
-	<message name="NewMessage"/>
+	<message name="getUsersListIn">
+		<part name="role" type="xsd:string"/>
+	</message>
 	<portType name="microservice.users.UserControllerPort">
 		<operation name="register">
 			<input message="tns:registerIn"/>
@@ -65,11 +67,8 @@
 			<output message="tns:userOut"/>
 		</operation>
 		<operation name="getUsersListByRole">
-			<output message="tns:geListIn"/>
-			<input message="tns:geListIn"/>
-		</operation>
-		<operation name="deleteUser">
-			<input message="tns:deleteUserIn"/>
+			<output message="tns:getListOut"/>
+			<input message="tns:getUsersListIn"/>
 		</operation>
 	</portType>
 	<binding name="microservice.users.UserControllerBinding" type="tns:microservice.users.UserControllerPort">
@@ -111,16 +110,10 @@
 			</output>
 		</operation>
 		<operation name="getUsersListByRole">
-			<soap:operation soapAction="urn:getUsersListByRole"/>
+			<soap:operation soapAction="urn:#getUsersListByRole"/>
 			<output>
 				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</output>
-			<input>
-				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
-			</input>
-		</operation>
-		<operation name="deleteUser">
-			<soap:operation soapAction="urn:deleteUser"/>
 			<input>
 				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://microservice-users.herokuapp.com/users"/>
 			</input>
@@ -132,4 +125,3 @@
 		</port>
 	</service>
 </definitions>
-
