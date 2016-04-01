@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:3001/users" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="microservice.users.UserController" targetNamespace="http://localhost:3001/users">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:3001/users">
+			<xs:complexType name="user">
+				<xs:sequence>
+					<xs:element name="id" type="xs:byte"/>
+					<xs:element name="firstName" type="xs:string"/>
+					<xs:element name="lastName" type="xs:string"/>
+					<xs:element name="email" type="xs:string"/>
+					<xs:element name="password" type="xs:string"/>
+					<xs:element name="role" type="xs:string"/>
+					<xs:element name="phone" type="xs:string"/>
+					<xs:element name="address" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="userList">
+				<xs:complexContent mixed="false">
+					<xs:restriction base="soap-enc:Array">
+						<xs:attribute wsdl:arrayType="tns:user[]" ref="soap-enc:arrayType"/>
+					</xs:restriction>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<message name="registerIn">
+		<part name="email" type="xsd:string"/>
+		<part name="password" type="xsd:string"/>
+	</message>
+	<message name="loginIn">
+		<part name="email" type="xsd:string"/>
+		<part name="password" type="xsd:string"/>
+	</message>
+	<message name="changeUserIn">
+		<part name="user" type="tns:user"/>
+	</message>
+	<message name="getUserByIdIn">
+		<part name="id" type="xsd:int"/>
+	</message>
+	<message name="geListIn">
+		<part name="users" type="xsd:integer"/>
+	</message>
+	<message name="userOut">
+		<part name="user" type="tns:user"/>
+	</message>
+	<message name="deleteUserIn">
+		<part name="id" type="xsd:int"/>
+	</message>
+	<message name="NewMessage"/>
+	<portType name="microservice.users.UserControllerPort">
+		<operation name="register">
+			<input message="tns:registerIn"/>
+			<output message="tns:userOut"/>
+		</operation>
+		<operation name="login">
+			<input message="tns:loginIn"/>
+			<output message="tns:userOut"/>
+		</operation>
+		<operation name="changeUser">
+			<input message="tns:changeUserIn"/>
+			<output message="tns:userOut"/>
+		</operation>
+		<operation name="getUserById">
+			<input message="tns:getUserByIdIn"/>
+			<output message="tns:userOut"/>
+		</operation>
+		<operation name="getUsersListByRole">
+			<output message="tns:geListIn"/>
+			<input message="tns:geListIn"/>
+		</operation>
+		<operation name="deleteUser">
+			<input message="tns:deleteUserIn"/>
+		</operation>
+	</portType>
+	<binding name="microservice.users.UserControllerBinding" type="tns:microservice.users.UserControllerPort">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="register">
+			<soap:operation soapAction="urn:register"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</output>
+		</operation>
+		<operation name="login">
+			<soap:operation soapAction="urn:login"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</output>
+		</operation>
+		<operation name="changeUser">
+			<soap:operation soapAction="urn:changeUser"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</output>
+		</operation>
+		<operation name="getUserById">
+			<soap:operation soapAction="urn:getUserById"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</output>
+		</operation>
+		<operation name="getUsersListByRole">
+			<soap:operation soapAction="urn:getUsersListByRole"/>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</output>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</input>
+		</operation>
+		<operation name="deleteUser">
+			<soap:operation soapAction="urn:deleteUser"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:3001/users"/>
+			</input>
+		</operation>
+	</binding>
+	<service name="microservice.users.UserControllerService">
+		<port name="microservice.users.UserControllerPort" binding="tns:microservice.users.UserControllerBinding">
+			<soap:address location="http://localhost:3001/users"/>
+		</port>
+	</service>
+</definitions>
+k
