@@ -120,6 +120,7 @@ server = http.createServer(function(request,response) {
   response.end(xml);
 });
 
-server.listen(process.env.PORT || 3001);
+var port = process.env.PORT || 3001;
+server.listen(port);
 soap.listen(server, '/users', service, xml);
-console.log('launched');
+console.log('launched at port ' + port);

@@ -1,1 +1,53 @@
-{}
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "vlada@mail.com",
+      "password": "123",
+      "role": "client",
+      "firstName": "Владислава",
+      "lastName": "Копытова",
+      "phone": "3980951236547",
+      "address": "пр.Ленина, 45"
+    },
+    {
+      "id": 2,
+      "email": "stasya@mail.com",
+      "password": "123",
+      "role": "client",
+      "firstName": "Станислава",
+      "lastName": "Балаховская",
+      "phone": "3980951233347",
+      "address": "ул.Пушкина, 33"
+    },
+    {
+      "id": 3,
+      "email": "kate@mail.com",
+      "password": "123",
+      "role": "courier",
+      "firstName": "Екатерина",
+      "lastName": "Лизогубова",
+      "phone": "380951394226",
+      "address": "пр.Ленина, 21а"
+    },
+    {
+      "id": 4,
+      "email": "andrey@mail.com",
+      "password": "123",
+      "role": "courier",
+      "firstName": "Андрей",
+      "lastName": "Трошин",
+      "phone": "3980951236527",
+      "address": "ул. Ляпунова, 9"
+    },
+    {
+      "id": 5,
+      "email": "admin@mail.com",
+      "password": "admin",
+      "role": "manager",
+      "firstName": "Сергей",
+      "lastName": "Иванов",
+      "phone": "3980959936527"
+    }
+  ]
+}
