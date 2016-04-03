@@ -43,9 +43,6 @@
 	<message name="userOut">
 		<part name="user" type="tns:user"/>
 	</message>
-	<message name="deleteUserIn">
-		<part name="id" type="xsd:int"/>
-	</message>
 	<message name="getUsersListIn">
 		<part name="role" type="xsd:string"/>
 	</message>

@@ -76,16 +76,6 @@ const service = {
         };
       },
 
-      deleteUser: function(args) {
-        const id = +__(args.id);
-        const user = db.find({ id });
-        if (!user) {
-          throw new SoapError('no such user');
-        }
-        db.remove({ id });
-        return;
-      },
-
       changeUser: function(args) {
         const id = +__(args.user.id);
         const user = db.find({ id });
